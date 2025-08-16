@@ -1605,9 +1605,23 @@ UPDATE 冒険者の書 b SET
  WHERE EXISTS (SELECT * FROM 上級冒険者の書 jb
                 WHERE jb.冒険者ID = b.冒険者ID) ;
 
- -- 問題14-5の回答
- DELETE FROM 冒険者の書
- WHERE 冒険者ID = 103;
+-- 問題14-5の回答
+-- トランザクションを開始する (Oracle以外の系統で必要)
+-- BEGIN TRANSACTION
+-- 口座の書を参照する口座取引の書から削除
+DELETE FROM 口座取引の書
+ WHERE 口座ID IN (SELECT 口座ID FROM 口座の書
+                   WHERE 冒険者ID = 103);
+-- 冒険者の書を参照する口座の書を削除
+DELETE FROM 口座の書 WHERE 冒険者ID = 103;
+-- 冒険者の書を参照する討伐実績の書を削除
+DELETE FROM 討伐実績の書 WHERE 冒険者ID = 103;
+-- 冒険者の書を参照する冒険者技の書を削除
+DELETE FROM 冒険者技の書 WHERE 冒険者ID = 103;
+-- 最後に、親である冒険者の書を削除
+DELETE FROM 冒険者の書 WHERE 冒険者ID = 103;
+-- 変更を確定する
+COMMIT;
 
 
 -----------------
@@ -1696,3 +1710,4 @@ SELECT 魔物タイプID, 名前, 攻撃力, 防御力
 SELECT 魔物タイプID, 名前, 攻撃力, 防御力
   FROM 魔物の書
  ORDER BY 魔物タイプID, 名前;
+
