@@ -1606,8 +1606,8 @@ UPDATE 冒険者の書 b SET
                 WHERE jb.冒険者ID = b.冒険者ID) ;
 
 -- 問題14-5の回答
--- トランザクションを開始する (Oracle以外の系統で必要)
--- BEGIN TRANSACTION
+-- トランザクションを開始する (Oracle系統では不要)
+BEGIN TRANSACTION
 -- 口座の書を参照する口座取引の書から削除
 DELETE FROM 口座取引の書
  WHERE 口座ID IN (SELECT 口座ID FROM 口座の書
@@ -1710,4 +1710,5 @@ SELECT 魔物タイプID, 名前, 攻撃力, 防御力
 SELECT 魔物タイプID, 名前, 攻撃力, 防御力
   FROM 魔物の書
  ORDER BY 魔物タイプID, 名前;
+
 
