@@ -184,7 +184,7 @@ SELECT
    m.名前,
    mt.魔物タイプID,
    mt.魔物タイプ名
-  FROM 魔物の書 m
+  FROM 魔物の書 m     --OracleではASを除いてください。
 LEFT OUTER JOIN 魔物タイプの書 mt
         ON m.魔物タイプID = mt.魔物タイプID;
 
@@ -1718,4 +1718,5 @@ SELECT 魔物タイプID, 名前, 攻撃力, 防御力
 SELECT 魔物タイプID, 名前, 攻撃力, 防御力
   FROM 魔物の書
  ORDER BY 魔物タイプID, 名前;
+
 
