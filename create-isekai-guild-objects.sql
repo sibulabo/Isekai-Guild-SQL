@@ -700,9 +700,9 @@ CREATE TABLE 技の書 (
   CONSTRAINT 技の書PK PRIMARY KEY (技ID)
 );
 
-INSERT INTO 技の書 VALUES (1, 'ファイアボルト', '小さな火球で敵単体を攻撃');
+INSERT INTO 技の書 VALUES (1, 'ファイアボルト', '小さな火球で敵単体を攻撃' || CHR(13) || CHR(10) || '炎の力で敵を燃え上がらせる。');
 
-INSERT INTO 技の書 VALUES (2, 'アイスニードル', '氷の槍で敵単体に貫通ダメージ');
+INSERT INTO 技の書 VALUES (2, 'アイスニードル', '氷の槍で敵単体に貫通ダメージ' || CHR(13) || CHR(10) || '鋭利な氷の針が敵を凍てつかせる。');
 
 INSERT INTO 技の書 VALUES (3, 'ライトニングエッジ', '電撃をまとって敵全体に攻撃');
 
