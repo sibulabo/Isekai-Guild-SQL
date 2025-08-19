@@ -493,31 +493,39 @@ SELECT
 
 -- 8-11
 -- SUBSTRINGの詠唱法：　《文字列》 《ｍ：開始位置》を指定
-SELECT SUBSTRING('Sunday', 3);
--- SELECT SUBSTR('Sunday', 3) FROM DUAL;  --For Oracle
+--For Oracle
+SELECT SUBSTR('Sunday', 3) FROM DUAL;  
+--For Oracle以外
+-- SELECT SUBSTRING('Sunday', 3);      
 
 
 -- 8-12
 -- SUBSTRINGの詠唱法：　すべての引数を指定
-SELECT SUBSTRING('Sunday', 3, 2);
--- SELECT SUBSTR('Sunday', 3, 2) FROM DUAL;  --For Oracle
+--For Oracle
+SELECT SUBSTR('Sunday', 3, 2) FROM DUAL;
+--For Oracle以外
+-- SELECT SUBSTRING('Sunday', 3, 2);
 
 -- 8-13
 -- SUBSTRINGの詠唱法：　 《ｍ：開始位置》に負の値を指定
-SELECT SUBSTRING('Sunday', -1);
--- SELECT SUBSTR('Sunday', -1) FROM DUAL;  --For Oracle
+--For Oracle
+SELECT SUBSTR('Sunday', -1) FROM DUAL;
+--For Oracle以外
+-- SELECT SUBSTRING('Sunday', -1);
 
 -- 8-14
 -- SUBSTRINGの詠唱法：　 《ｍ：開始位置》に負の値を指定
-SELECT SUBSTRING('Sunday', -5, 2);
--- SELECT SUBSTR('Sunday', -5, 2) FROM DUAL;  --For Oracle
+--For Oracle
+SELECT SUBSTR('Sunday', -5, 2) FROM DUAL;
+--For Oracle以外
+-- SELECT SUBSTRING('Sunday', -5, 2);
 
 -- 8-15
 -- 『標準SQL形式』のSUBSTRING関数の使用方法
 SELECT
     識別コード,
-    SUBSTRING(識別コード FROM 2 FOR 8) AS 生年月日
-    -- SUBSTR(識別コード, 2, 8) AS 生年月日  --For Oracle
+    SUBSTR(識別コード, 2, 8) AS 生年月日             --For Oracle
+    --SUBSTRING(識別コード FROM 2 FOR 8) AS 生年月日 --For Oracle以外
  FROM 冒険者の書;
 
 
@@ -1726,6 +1734,7 @@ SELECT 魔物タイプID, 名前, 攻撃力, 防御力
 SELECT 魔物タイプID, 名前, 攻撃力, 防御力
   FROM 魔物の書
  ORDER BY 魔物タイプID, 名前;
+
 
 
 
