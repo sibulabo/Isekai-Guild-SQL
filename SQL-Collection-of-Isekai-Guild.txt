@@ -424,6 +424,15 @@ SELECT
   LEFT JOIN 技の書 W ON BW.技ID = W.技ID
 ORDER BY 名前, 技名;
 
+--もし最後の技の書との結合が内部結合ならば・・・
+SELECT
+    B.名前, W.技名
+  FROM 冒険者の書 B
+  LEFT JOIN 冒険者技の書 BW
+         ON B.冒険者ID = BW.冒険者ID
+  JOIN 技の書 W ON BW.技ID = W.技ID
+  ORDER BY 名前, 技名;
+
 
 -----------------
 --    8章      --
@@ -1717,6 +1726,7 @@ SELECT 魔物タイプID, 名前, 攻撃力, 防御力
 SELECT 魔物タイプID, 名前, 攻撃力, 防御力
   FROM 魔物の書
  ORDER BY 魔物タイプID, 名前;
+
 
 
 
