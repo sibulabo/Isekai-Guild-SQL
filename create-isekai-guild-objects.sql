@@ -928,11 +928,11 @@ INSERT INTO 口座の書 (口座ID, 冒険者ID, 残高) VALUES (16, 116, 11000)
 
 INSERT INTO 口座の書 (口座ID, 冒険者ID, 残高) VALUES (17, 117, 10000);
 
-INSERT INTO 口座の書 (口座ID, 冒険者ID, 残高) VALUES (18, 118, 9000);
+INSERT INTO 口座の書 (口座ID, 冒険者ID, 残高) VALUES (18, 118, 0);
 
-INSERT INTO 口座の書 (口座ID, 冒険者ID, 残高) VALUES (19, 119, 8000);
+INSERT INTO 口座の書 (口座ID, 冒険者ID, 残高) VALUES (19, 119, 0);
 
-INSERT INTO 口座の書 (口座ID, 冒険者ID, 残高) VALUES (20, 120, 7000);
+INSERT INTO 口座の書 (口座ID, 冒険者ID, 残高) VALUES (20, 120, 0);
 
 -- 現在のセッションにおける日付とタイムスタンプのデフォルト表示形式を設定します。
 ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
