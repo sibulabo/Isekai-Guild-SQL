@@ -1680,17 +1680,6 @@ SELECT 'ゴブリン' AS 名前, 100 AS 攻撃力 FROM DUAL
 UNION ALL
 SELECT 'ゴブリン', 100 FROM DUAL;
 
--- UNION / UNION ALL の違いを理解する。(For Oracle)
--- UNION使用
-SELECT 'ゴブリン' AS 名前, 100 AS 攻撃力 FROM DUAL
-UNION
-SELECT 'ゴブリン', 100 FROM DUAL;
-
--- UNION ALL使用
-SELECT 'ゴブリン' AS 名前, 100 AS 攻撃力 FROM DUAL
-UNION ALL
-SELECT 'ゴブリン', 100 FROM DUAL;
-
 -- 15-2
 -- 実践：異なるデータを統合し比較する UNIONの力
 SELECT 名前, 攻撃力, '冒険者' AS 区分 FROM 冒険者の書
@@ -1742,6 +1731,7 @@ SELECT 魔物タイプID, 名前, 攻撃力, 防御力
 SELECT 魔物タイプID, 名前, 攻撃力, 防御力
   FROM 魔物の書
  ORDER BY 魔物タイプID, 名前;
+
 
 
 
