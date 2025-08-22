@@ -1670,15 +1670,15 @@ SELECT 技ID, 技名 FROM 技の書
 
 -- 15-1
 -- UNION / UNION ALL の違いを理解する。
+-- (Oracle以外では、FROM DUALを除いてください。）
 -- UNION使用
-SELECT 'ゴブリン' AS 名前, 100 AS 攻撃力
+SELECT 'ゴブリン' AS 名前, 100 AS 攻撃力 FROM DUAL
 UNION
-SELECT 'ゴブリン', 100;
-
+SELECT 'ゴブリン', 100 FROM DUAL;
 -- UNION ALL使用
-SELECT 'ゴブリン' AS 名前, 100 AS 攻撃力
+SELECT 'ゴブリン' AS 名前, 100 AS 攻撃力 FROM DUAL
 UNION ALL
-SELECT 'ゴブリン', 100;
+SELECT 'ゴブリン', 100 FROM DUAL;
 
 -- UNION / UNION ALL の違いを理解する。(For Oracle)
 -- UNION使用
@@ -1742,6 +1742,7 @@ SELECT 魔物タイプID, 名前, 攻撃力, 防御力
 SELECT 魔物タイプID, 名前, 攻撃力, 防御力
   FROM 魔物の書
  ORDER BY 魔物タイプID, 名前;
+
 
 
 
